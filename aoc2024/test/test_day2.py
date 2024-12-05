@@ -3,10 +3,11 @@ from ..day2 import Day2, is_report_safe, is_report_mostly_safe
 
 
 class TestDay2(unittest.TestCase):
-    day2 = Day2()
-    day2.load("inputs/day2/test_input.txt")
+    def setUp(self):
+        self.day2 = Day2()
+        self.day2.load("inputs/day2/test_input.txt")
 
-    def test_init(self):
+    def test_load(self):
         expected = [
             [7,6,4,2,1],
             [1,2,7,8,9],

@@ -2,10 +2,11 @@ import unittest
 from ..day4 import Day4
 
 class TestDay4(unittest.TestCase):
-    day4 = Day4()
-    day4.load("inputs/day4/test_input.txt")
+    def setUp(self):
+        self.day4 = Day4()
+        self.day4.load("inputs/day4/test_input.txt")
 
-    def test_init(self):
+    def test_load(self):
         expected_first_row = ["M", "M", "M", "S", "X", "X", "M", "A", "S", "M"]
         expected_last_row = ["M", "X", "M", "X", "A", "X", "M", "A", "S", "X"]
         actual = self.day4.rows
@@ -35,9 +36,9 @@ class TestDay4(unittest.TestCase):
         self.assertTrue(self.day4.word_matches_position_and_direction("XMAS", (5, 6), (-1, -1)))
 
     def test_word_search_from_starting_position(self):
-        self.assertEqual(1, self.day4.word_search_from_starting_position("XMAS", (0, 4)), )
-        self.assertEqual(2, self.day4.word_search_from_starting_position("XMAS", (9, 9)), )
-        self.assertEqual(0, self.day4.word_search_from_starting_position("XMAS", (0, 0)), )
+        self.assertEqual(1, self.day4.word_search_from_starting_position("XMAS", (0, 4)))
+        self.assertEqual(2, self.day4.word_search_from_starting_position("XMAS", (9, 9)))
+        self.assertEqual(0, self.day4.word_search_from_starting_position("XMAS", (0, 0)))
 
     def test_count_all_word_matches(self):
         self.assertEqual(18, self.day4.count_all_word_matches("XMAS"))

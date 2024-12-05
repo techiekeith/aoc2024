@@ -3,9 +3,10 @@ import unittest
 from ..day3 import Day3, find_enabled_statements, find_mul_statements, multiply_numbers
 
 class TestDay3(unittest.TestCase):
-    day3 = Day3()
+    def setUp(self):
+        self.day3 = Day3()
 
-    def test_init(self):
+    def test_load(self):
         self.day3.load("inputs/day3/test_input_part_1.txt")
         expected = "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))"
         actual = self.day3.program.strip()

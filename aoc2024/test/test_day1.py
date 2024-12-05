@@ -2,7 +2,8 @@ import unittest
 from ..day1 import Day1
 
 class TestDay1(unittest.TestCase):
-    day1 = Day1()
+    def setUp(self):
+        self.day1 = Day1()
 
     def test_left_numbers(self):
         self.day1.load("inputs/day1/test_input.txt")
