@@ -109,3 +109,6 @@ class Day6(Day):
 
     def part2(self):
         return self.count_loops()
+
+    def is_part2_performance_slow(self):
+        return True

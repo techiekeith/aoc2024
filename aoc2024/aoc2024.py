@@ -13,7 +13,10 @@ def run_day(day, day_number):
     day.load(f"inputs/day{day_number}/input.txt")
     part1 = day.part1()
     print(f"Day {day_number} Part 1: {part1}")
-    part2 = day.part2()
+    if day.is_part2_performance_slow():
+        part2 = "(slow)"
+    else:
+        part2 = day.part2()
     print(f"Day {day_number} Part 2: {part2}")
 
 

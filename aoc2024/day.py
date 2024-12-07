@@ -13,3 +13,6 @@ class Day:
     @abstractmethod
     def part2(self):
         pass
+
+    def is_part2_performance_slow(self):
+        return False
