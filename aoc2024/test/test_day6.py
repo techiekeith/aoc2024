@@ -15,11 +15,6 @@ class TestDay6(unittest.TestCase):
         self.assertEqual(expected_location, self.day6.location)
         self.assertEqual(expected_direction, self.day6.direction)
 
-    def test_reset_grid(self):
-        self.day6.grid[0][0] = 'X'
-        self.day6.reset_grid()
-        self.assertEqual(self.day6.grid[0][0], '.')
-
     def test_get_next_location_north(self):
         initial_location = (6, 4)
         initial_direction = self.day6.north
@@ -54,11 +49,6 @@ class TestDay6(unittest.TestCase):
         self.assertIsNone(self.day6.get_cell_at_location((-1, 0)))
         self.assertIsNone(self.day6.get_cell_at_location((10, 0)))
 
-    def test_check_for_obstacle(self):
-        self.assertFalse(self.day6.check_for_obstacle((5, 4), self.day6.north))
-        self.assertTrue(self.day6.check_for_obstacle((1, 4), self.day6.north))
-        self.assertFalse(self.day6.check_for_obstacle((0, 4), self.day6.north))
-
     def test_move_no_obstacle(self):
         start_y = 6
         start_x = 4
@@ -71,7 +61,6 @@ class TestDay6(unittest.TestCase):
         self.day6.move()
         self.assertEqual(expected_location, self.day6.location)
         self.assertEqual(expected_direction, self.day6.direction)
-        self.assertEqual('^', self.day6.grid[expected_y][expected_x])
 
     def test_move_with_obstacle(self):
         start_y = 1
@@ -85,7 +74,6 @@ class TestDay6(unittest.TestCase):
         self.day6.move()
         self.assertEqual(expected_location, self.day6.location)
         self.assertEqual(expected_direction, self.day6.direction)
-        self.assertEqual('>', self.day6.grid[expected_y][expected_x])
 
     def test_move_with_obstacle_west_to_north(self):
         start_y = 3
@@ -99,12 +87,10 @@ class TestDay6(unittest.TestCase):
         self.day6.move()
         self.assertEqual(expected_location, self.day6.location)
         self.assertEqual(expected_direction, self.day6.direction)
-        self.assertEqual('^', self.day6.grid[expected_y][expected_x])
 
     def test_count_visited_locations(self):
-        self.day6.reset_grid()
         expected = 41
-        actual = self.day6.count_visited_locations()
+        actual = len(self.day6.get_visited_locations())
         self.assertEqual(expected, actual)
 
     def test_count_loops(self):
