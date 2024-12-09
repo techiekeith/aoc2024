@@ -8,8 +8,9 @@ from aoc2024.day5 import Day5
 from aoc2024.day6 import Day6
 from aoc2024.day7 import Day7
 from aoc2024.day8 import Day8
+from aoc2024.day9 import Day9
 
-days = [Day1(), Day2(), Day3(), Day4(), Day5(), Day6(), Day7(), Day8()]
+days = [Day1(), Day2(), Day3(), Day4(), Day5(), Day6(), Day7(), Day8(), Day9()]
 
 
 def run_day(day, day_number):
