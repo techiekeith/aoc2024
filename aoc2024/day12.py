@@ -85,17 +85,11 @@ def get_sides(perimeter_locations):
 
 def calculate_cost(grid):
     regions = get_regions(grid)
-    cost = 0
-    for location in regions:
-        cost += regions[location]["area"] * regions[location]["perimeter"]
-    return cost
+    return sum([regions[location]["area"] * regions[location]["perimeter"] for location in regions])
 
 def calculate_discounted_cost(grid):
     regions = get_regions(grid)
-    cost = 0
-    for location in regions:
-        cost += regions[location]["area"] * regions[location]["sides"]
-    return cost
+    return sum([regions[location]["area"] * regions[location]["sides"] for location in regions])
 
 
 class Day12(Day):
