@@ -65,6 +65,7 @@ class Robot:
             (self.position[0] + moves * self.velocity[0]) % width,
             (self.position[1] + moves * self.velocity[1]) % height)
 
+
 class Day14(Day):
     robots = None
 
