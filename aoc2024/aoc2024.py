@@ -5,6 +5,7 @@ from aoc2024.day10 import Day10
 from aoc2024.day11 import Day11
 from aoc2024.day12 import Day12
 from aoc2024.day13 import Day13
+from aoc2024.day14 import Day14
 from aoc2024.day2 import Day2
 from aoc2024.day3 import Day3
 from aoc2024.day4 import Day4
@@ -14,7 +15,9 @@ from aoc2024.day7 import Day7
 from aoc2024.day8 import Day8
 from aoc2024.day9 import Day9
 
-days = [Day1(), Day2(), Day3(), Day4(), Day5(), Day6(), Day7(), Day8(), Day9(), Day10(), Day11(), Day12(), Day13()]
+days = [
+    Day1(), Day2(), Day3(), Day4(), Day5(), Day6(), Day7(), Day8(), Day9(), Day10(), Day11(), Day12(), Day13(), Day14()
+]
 
 
 def run_day(day_number):
