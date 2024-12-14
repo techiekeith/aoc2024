@@ -5,7 +5,6 @@ from ..day12 import Day12, get_region_area_and_perimeter, get_regions, calculate
 class TestDay12(unittest.TestCase):
     def setUp(self):
         self.day12 = Day12()
-        # self.day12.load("inputs/day11/test_input.txt")
 
     def test_load(self):
         self.day12.load("inputs/day12/test_input_1.txt")
