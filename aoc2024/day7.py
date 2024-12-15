@@ -43,3 +43,6 @@ class Day7(Day):
 
     def part2(self):
         return self.get_total_calibration_result(allow_concatenation=True)
+
+    def is_part2_performance_slow(self):
+        return True

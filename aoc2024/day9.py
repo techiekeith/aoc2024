@@ -84,3 +84,6 @@ class Day9(Day):
 
     def part2(self):
         return get_filesystem_checksum(compact_files(self.disk_map))
+
+    def is_part2_performance_slow(self):
+        return True

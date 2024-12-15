@@ -22,18 +22,18 @@ days = [
 ]
 
 
-def run_day(day_number):
+def run_day(day_number, exclude_slow=False):
     day = days[day_number - 1]
     day.load(f"inputs/day{day_number}/input.txt")
     part1_start = time.perf_counter()
     part1 = day.part1()
     part1_end = time.perf_counter()
     print(f"Day {day_number} Part 1: {part1} ({part1_end - part1_start:.6f} seconds)")
+    if exclude_slow and day.is_part2_performance_slow():
+        print(f"Day {day_number} Part 2: (slow)")
+        return
     part2_start = time.perf_counter()
-    if day.is_part2_performance_slow():
-        part2 = "(slow)"
-    else:
-        part2 = day.part2()
+    part2 = day.part2()
     part2_end = time.perf_counter()
     print(f"Day {day_number} Part 2: {part2} ({part2_end - part2_start:.6f} seconds)")
 
@@ -41,6 +41,6 @@ def run_day(day_number):
 def run(args):
     if len(args) == 0:
         for index in range(len(days)):
-            run_day(index + 1)
+            run_day(index + 1, exclude_slow=True)
     else:
         [run_day(int(arg)) for arg in args]
