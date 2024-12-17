@@ -1,6 +1,3 @@
-import functools
-import time
-
 from aoc2024.day import Day
 
 
@@ -66,6 +63,7 @@ class Location:
 
     def __repr__(self):
         return f"(x, y)={self.position} (dx, dy)={self.direction} score={self.score} rotated={self.rotated} start={self.start} end={self.end}"
+
 
 class Day16(Day):
     grid = None
