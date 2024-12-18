@@ -9,6 +9,7 @@ from aoc2024.day14 import Day14
 from aoc2024.day15 import Day15
 from aoc2024.day16 import Day16
 from aoc2024.day17 import Day17
+from aoc2024.day18 import Day18
 from aoc2024.day2 import Day2
 from aoc2024.day3 import Day3
 from aoc2024.day4 import Day4
@@ -20,7 +21,7 @@ from aoc2024.day9 import Day9
 
 days = [
     Day1(), Day2(), Day3(), Day4(), Day5(), Day6(), Day7(), Day8(), Day9(), Day10(), Day11(), Day12(), Day13(), Day14(),
-    Day15(), Day16(), Day17()
+    Day15(), Day16(), Day17(), Day18()
 ]
 
 
