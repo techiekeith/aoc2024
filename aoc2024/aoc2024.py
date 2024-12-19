@@ -10,6 +10,7 @@ from aoc2024.day15 import Day15
 from aoc2024.day16 import Day16
 from aoc2024.day17 import Day17
 from aoc2024.day18 import Day18
+from aoc2024.day19 import Day19
 from aoc2024.day2 import Day2
 from aoc2024.day3 import Day3
 from aoc2024.day4 import Day4
@@ -21,12 +22,16 @@ from aoc2024.day9 import Day9
 
 days = [
     Day1(), Day2(), Day3(), Day4(), Day5(), Day6(), Day7(), Day8(), Day9(), Day10(), Day11(), Day12(), Day13(), Day14(),
-    Day15(), Day16(), Day17(), Day18()
+    Day15(), Day16(), Day17(), Day18(), Day19()
 ]
 
 
 def run_day(day_number, exclude_slow=False):
     day = days[day_number - 1]
+    if exclude_slow and day.is_performance_slow():
+        print(f"Day {day_number} Part 1: (slow)")
+        print(f"Day {day_number} Part 2: (slow)")
+        return
     day.load(f"inputs/day{day_number}/input.txt")
     part1_start = time.perf_counter()
     part1 = day.part1()
